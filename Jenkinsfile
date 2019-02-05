@@ -1,8 +1,7 @@
 pipeline{
     agent any
     tools {
-        jdk 'java1.8.0'
-        gradle 'gradel'
+        gradle 'gradle'
     }
     stages{
     	stage('Build'){
