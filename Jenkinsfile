@@ -12,22 +12,16 @@ pipeline{
     		}
     	}
     	stage('Build Docker Image'){
-    		when{
-    			branch 'master'
-    		}
     		steps{
     			script{
-    				app = docker.build("<docker_login_id>/node-app")
+    				app = docker.build("mahi4847/node-app")
     				app.inside{
-    					sh 'echo $(curl 54.184.243.113:8081)'
+    					sh 'echo $(curl 54.184.243.113:8080)'
     				}
     			}
     		}
     	}
     	stage('Push Docker Image'){
-    		when{
-    			branch 'master'
-    		}
     		steps{
     			script{
     				docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login'){
