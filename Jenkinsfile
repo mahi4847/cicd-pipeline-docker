@@ -16,7 +16,7 @@ pipeline{
     			script{
     				app = docker.build("mahi4847/node-app")
     				app.inside{
-    					sh 'echo $(curl http://54.184.243.113:8080)'
+    					sh 'echo $(curl http://54.191.133.216:8080)'
     				}
     			}
     		}
