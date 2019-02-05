@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        gradle "GRADLE_LATEST"
+        gradle "Gradel 5.2"
     }
     stages{
     	stage('Build'){
