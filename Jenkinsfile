@@ -5,7 +5,7 @@ pipeline{
     		steps {
     		     	echo 'Running build automation'
     			sh './gradelw build --no-daemon'
-    			archiveArtifacts artifacs: 'dist/trainSchedule.zip'
+    			archiveArtifacts artifacts: 'dist/trainSchedule.zip'
     		}
     	}
     	stage('Build Docker Image'){
@@ -16,7 +16,7 @@ pipeline{
     			script{
     				app = docker.build("<docker_login_id>/node-app")
     				app.inside{
-    					sh 'echo $(curl localhost:8080)'
+    					sh 'echo $(curl 54.184.243.113:8081)'
     				}
     			}
     		}
